@@ -1,0 +1,27 @@
+{
+  "name": "Web_IM",
+  "version": "1.0.0",
+  "description": "web chat based socket.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "socket.io",
+    "express",
+    "webchat",
+    "im"
+  ],
+  "author": "shadow",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0",
+    "socket.io": "^1.4.6"
+  },
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-cli": "^1.2.1",
+    "gulp-develop-server": "^0.5.2",
+    "gulp-notify": "^2.2.0"
+  }
+}

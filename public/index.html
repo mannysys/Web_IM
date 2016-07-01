@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebIM</title>
+    <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <!-- 左边栏 -->
+        <div class="col-md-3 col-xs-4">
+            <!-- User info -->
+            <div class="panel panel-info">
+                <div class="panel-heading">User Info</div>
+                <div class="panel-body">
+                    Nick：<span id="span_nickname"></span>
+                </div>
+            </div>
+            <!-- User list -->
+            <div class="panel panel-warning">
+                <div class="panel-heading">User List</div>
+                <div class="panel-body app-user-list-body">
+                    <table class="table table-bordered table-condensed" id="table_userlist">
+                        <tr class="success">
+                            <td>ALL</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- 右边栏 -->
+        <div class="col-md-9 col-xs-8">
+            <div class="panel panel-danger">
+                <div class="panel-heading">会话【ALL】</div>
+                <div class="panel-body app-chat-body">
+                    <div class="app-chat-content">
+                        <!--这里显示的是公共模板 -->
+                    </div>
+                    <!-- 聊天输入框 -->
+                    <div class="app-chat-operator">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="el_input_msg">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" id="el_btn_send">
+                                    Send<i class="glyphicon glyphicon-send"></i>
+                                </button>
+                                <button class="btn btn-primary" id="el_btn_sendfile">
+                                    Send File <i class="glyphicon glyphicon-file"></i>
+                                </button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 弹出框遮罩层 -->
+<div class="backup"></div>
+<!-- 上传文件弹出框 -->
+<div class="app-file-container">
+    <div class="input-group">
+        <input type="file" class="form-control" id="el_file">
+        <span class="input-group-btn">
+            <button class="btn btn-warning" id="el_btn_file_send">Send</button>
+            <button class="btn btn-default" id="el_btn_file_cancel">Cancel</button>
+        </span>
+    </div>
+</div>
+<!-- 公共显示消息模板 -->
+<div id="el_template">
+    <div class="col-md-7 col-xs-7 app-msg-panel ${pullRight}">
+        <div class="app-msg-heading ${textRight}">
+            <span class="${bgClass} app-msg-tip ${pullRight}">
+                <i class="glyphicon ${info-icon}"></i>${title}
+            </span>
+            <span class="label-default app-msg-tip">
+                <i class="glyphicon glyphicon-time"></i>${time}
+            </span>
+        </div>
+        <!-- 聊天内容 -->
+        <div class="app-msg-body">
+            ${msg}
+        </div>
+    </div>
+</div>
+
+<script src="/assets/jquery/jquery-2.2.2.js"></script>
+<script src="/assets/bootstrap/js/bootstrap.js"></script>
+<script src="/assets/socket.io/socket.io.js"></script>
+
+<script src="/js/app.js"></script>
+</body>
+</html>
